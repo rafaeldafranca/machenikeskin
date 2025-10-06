@@ -1,0 +1,72 @@
+/* CSS base para skin customizada no Gamepad Viewer */
+.custom .gamepad {
+  position: relative;
+  width: 600px;  /* ajuste conforme necessário */
+  height: 300px;
+  background: url("URL_DA_IMAGEM_DO_CONTROLE_MACHENIKE") no-repeat center center;
+  background-size: contain;
+}
+
+/* exemplo para botão “A” (ou equivalente) */
+.custom [data-name="button_0"] {
+  position: absolute;
+  left: 70%;
+  top: 50%;
+  width: 35px;
+  height: 35px;
+  background: rgba(255, 0, 0, 0.8); /* cor de destaque quando pressionado */
+  border-radius: 50%;
+  transition: background 0.1s;
+}
+.custom [data-name="button_0"].pressed {
+  background: rgba(0, 255, 0, 0.9);
+}
+
+/* exemplo para stick analógico esquerdo */
+.custom .stick-left {
+  position: absolute;
+  left: 25%;
+  top: 60%;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+}
+.custom .stick-left .inner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #444;
+  border-radius: 50%;
+  left: 20px;
+  top: 20px;
+}
+
+/* gatilhos / triggers */
+.custom [data-name="button_6"] {
+  /* exemplo para trigger L2 / LT */
+  position: absolute;
+  left: 15%;
+  top: 5%;
+  width: 50px;
+  height: 20px;
+  background: rgba(100,100,100,0.5);
+}
+.custom [data-name="button_6"].pressed {
+  background: rgba(100,100,100,0.9);
+}
+
+/* d-pad */
+.custom [data-name="dpad_up"] {
+  position: absolute;
+  left: 40%;
+  top: 45%;
+  width: 25px;
+  height: 25px;
+  background: rgba(200,200,200,0.7);
+}
+.custom [data-name="dpad_up"].pressed {
+  background: rgba(50,50,50,0.9);
+}
+
+/* etc para os demais botões (B, X, Y, D-pad left/right/down, R, etc) */
