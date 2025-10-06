@@ -5,7 +5,7 @@
   position: relative;
   width: 700px;
   height: 400px;
-  background: url("https://i.imgur.com/7zOosRz.png") no-repeat center center; /* imagem base do controle cinza */
+  background: url("https://raw.githubusercontent.com/rafaeldafranca/machenikeskin/main/machenike.png") no-repeat center center; /* imagem base do controle cinza */
   background-size: contain;
   transform: scale(1);
   filter: drop-shadow(0 0 10px rgba(0,0,0,0.4));
