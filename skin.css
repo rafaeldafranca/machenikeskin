@@ -1,72 +1,172 @@
-/* CSS base para skin customizada no Gamepad Viewer */
+/* === Machenike G5 V2 (versão cinza) === */
+/* Autor: Rafael da França / Skin by ChatGPT */
+
 .custom .gamepad {
   position: relative;
-  width: 600px;  /* ajuste conforme necessário */
-  height: 300px;
-  background: url("URL_DA_IMAGEM_DO_CONTROLE_MACHENIKE") no-repeat center center;
+  width: 700px;
+  height: 400px;
+  background: url("https://i.imgur.com/7zOosRz.png") no-repeat center center; /* imagem base do controle cinza */
   background-size: contain;
+  transform: scale(1);
+  filter: drop-shadow(0 0 10px rgba(0,0,0,0.4));
 }
 
-/* exemplo para botão “A” (ou equivalente) */
+/* =============== BOTÕES =============== */
+
+/* Botão A */
 .custom [data-name="button_0"] {
   position: absolute;
-  left: 70%;
-  top: 50%;
-  width: 35px;
-  height: 35px;
-  background: rgba(255, 0, 0, 0.8); /* cor de destaque quando pressionado */
+  left: 77%;
+  top: 47%;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  transition: background 0.1s;
+  background: radial-gradient(circle, #4cff79 0%, #1e963f 80%);
+  opacity: 0.4;
+  transition: opacity 0.05s, transform 0.05s;
 }
 .custom [data-name="button_0"].pressed {
-  background: rgba(0, 255, 0, 0.9);
+  opacity: 1;
+  transform: scale(1.1);
 }
 
-/* exemplo para stick analógico esquerdo */
-.custom .stick-left {
+/* Botão B */
+.custom [data-name="button_1"] {
   position: absolute;
-  left: 25%;
-  top: 60%;
-  width: 60px;
-  height: 60px;
-  border: 2px solid #ccc;
+  left: 83%;
+  top: 42%;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  background: radial-gradient(circle, #ff5555 0%, #992222 80%);
+  opacity: 0.4;
+  transition: opacity 0.05s, transform 0.05s;
 }
-.custom .stick-left .inner {
+.custom [data-name="button_1"].pressed {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Botão X */
+.custom [data-name="button_2"] {
+  position: absolute;
+  left: 71%;
+  top: 42%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #55aaff 0%, #1e5ea6 80%);
+  opacity: 0.4;
+  transition: opacity 0.05s, transform 0.05s;
+}
+.custom [data-name="button_2"].pressed {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Botão Y */
+.custom [data-name="button_3"] {
+  position: absolute;
+  left: 77%;
+  top: 36%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffee55 0%, #a6971e 80%);
+  opacity: 0.4;
+  transition: opacity 0.05s, transform 0.05s;
+}
+.custom [data-name="button_3"].pressed {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* =============== D-PAD =============== */
+.custom .dpad {
+  position: absolute;
+  left: 19%;
+  top: 42%;
+  width: 100px;
+  height: 100px;
+}
+
+.custom [data-name="dpad_up"],
+.custom [data-name="dpad_down"],
+.custom [data-name="dpad_left"],
+.custom [data-name="dpad_right"] {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: rgba(150,150,150,0.5);
+  border-radius: 4px;
+  transition: background 0.05s;
+}
+
+.custom [data-name="dpad_up"] { left: 35px; top: 0; }
+.custom [data-name="dpad_down"] { left: 35px; top: 70px; }
+.custom [data-name="dpad_left"] { left: 0; top: 35px; }
+.custom [data-name="dpad_right"] { left: 70px; top: 35px; }
+
+.custom [data-name^="dpad_"].pressed {
+  background: rgba(100,200,255,0.9);
+}
+
+/* =============== STICKS =============== */
+.custom .stick {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid rgba(150,150,150,0.6);
+  background: radial-gradient(circle, #555 0%, #333 70%);
+  overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.6);
+}
+
+.custom .stick-left { left: 30%; top: 58%; }
+.custom .stick-right { left: 55%; top: 65%; }
+
+.custom .stick .inner {
   position: absolute;
   width: 20px;
   height: 20px;
-  background: #444;
+  background: #0ff;
   border-radius: 50%;
-  left: 20px;
-  top: 20px;
+  left: 30px;
+  top: 30px;
+  transition: transform 0.05s;
 }
 
-/* gatilhos / triggers */
-.custom [data-name="button_6"] {
-  /* exemplo para trigger L2 / LT */
+/* =============== GATILHOS =============== */
+.custom [data-name="button_6"], 
+.custom [data-name="button_7"] {
   position: absolute;
-  left: 15%;
-  top: 5%;
-  width: 50px;
-  height: 20px;
-  background: rgba(100,100,100,0.5);
-}
-.custom [data-name="button_6"].pressed {
-  background: rgba(100,100,100,0.9);
+  width: 80px;
+  height: 25px;
+  background: linear-gradient(to bottom, #aaa, #666);
+  border-radius: 4px;
+  opacity: 0.5;
+  transition: opacity 0.05s;
 }
 
-/* d-pad */
-.custom [data-name="dpad_up"] {
+.custom [data-name="button_6"] { left: 20%; top: 5%; }  /* LT */
+.custom [data-name="button_7"] { left: 70%; top: 5%; }  /* RT */
+
+.custom [data-name="button_6"].pressed,
+.custom [data-name="button_7"].pressed {
+  opacity: 1;
+  background: linear-gradient(to bottom, #0ff, #099);
+}
+
+/* =============== BARRA CENTRAL =============== */
+.custom .gamepad::after {
+  content: "";
   position: absolute;
   left: 40%;
-  top: 45%;
-  width: 25px;
-  height: 25px;
-  background: rgba(200,200,200,0.7);
+  top: 25%;
+  width: 20%;
+  height: 10px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, rgba(0,255,255,0.6), rgba(0,0,100,0.6));
+  box-shadow: 0 0 10px rgba(0,255,255,0.8);
 }
-.custom [data-name="dpad_up"].pressed {
-  background: rgba(50,50,50,0.9);
-}
-
-/* etc para os demais botões (B, X, Y, D-pad left/right/down, R, etc) */
